@@ -1,5 +1,3 @@
-# differential-serving
-
 ## What is differential serving?
 
 At it's most basic level it looks something like you see below. The idea is that we serve code to specific environments. In this case we are interested in serving ESNext code to modern browsers that support it and serve ES5 code to browsers like IE. 
