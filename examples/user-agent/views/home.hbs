@@ -1,0 +1,8 @@
+<div id="root-es5"></div>
+<div id="root-esm"></div>
+
+{{#if isModuleCompatible}}
+<script type="module" src="/static/index.esm.js"></script>
+{{else}}
+<script src="/static/index.legacy.js"></script>
+{{/if}}
