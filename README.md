@@ -4,7 +4,7 @@ At it's most basic level it looks something like you see below. The idea is that
 
 This is made possible thanks to `<script type="module">` and `<script nomodule>`. We can leverage these script properties to serve the correct JS when called by the browser.
 
-![diff-serving](./assets/diff-serving)
+![diff-serving](./assets/diff-serving.gif)
 
 Code running above can be found in [examples/test](./examples/test/).
 
