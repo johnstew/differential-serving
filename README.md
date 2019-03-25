@@ -180,7 +180,38 @@ Then within our template we can check to see if the browser works with ESM code,
 
 ## Tests
 
-With both approaches in place, it's time to run some tests to see what each yields.
+With both methods in place, it's time to run some tests to see what each yields.
+
+Goal: Serve ES6 bundle to ES6 supported environments and serve ES5 bundles to ES5 environments. Only one bundle is to be parsed and executed.
+
+Browsers Tested:
+
+- 🎉 = `<script type="module">` support landed
+- ✅ = Works as expected (correct bundle is parsed and executed)
+- ⁉️ = Has issues
+
+| Browser          | Version | Browser Test Link                   | User Agent Test Link |
+|------------------|---------|-------------------------------------|----------------------|
+| Chrome           | 73      | [View](./tests/Chrome-73.gif)       | N/A                  |
+| Chrome           | 61      | [View](./tests/Chrome-61.gif)       | N/A                  |
+| Chrome           | 61      | [View](./tests/Chrome-60.gif)       | N/A                  |
+| Safari           | 12      | [View](./tests/Safari-12.gif)       | N/A                  |
+| Safari           | 11.1    | [View](./tests/Safari-11.gif)       | N/A                  |
+| Safari           | 10.1    | [View](./tests/Safari-10-1.gif)     | N/A                  |
+| Firefox          | 66      | [View](./tests/Firefox-66.gif)      | N/A                  |
+| Firefox          | 60      | [View](./tests/Firefox-60.gif)      | N/A                  |
+| Firefox          | 59      | [View](./tests/Firefox-59.gif)      | N/A                  |
+| MSIE             | 11      | [View](./tests/MSIE-11.gif)         | N/A                  |
+| MSEdge           | 18      | [View](./tests/MSEdge-18.gif)       | N/A                  |
+| MSEdge           | 16      | [View](./tests/MSEdge-16.gif)       | N/A                  |
+| MSEdge           | 15      | [View](./tests/MSEdge-15.gif)       | N/A                  |
+| iPhone XS Safari | Latest  | [View](./tests/iPhoneXS-Safari.gif) | N/A                  |
+| iPhone X Safari  | Latest  | [View](./tests/iPhoneX-Safari.gif)  | N/A                  |
+| iPhone 8 Safari  | Latest  | [View](./tests/iPhone8-Safari.gif)  | N/A                  |
+| Pixel 2 Chrome   | Latest  | [View](./tests/Pixel2-Chrome.gif)   | N/A                  |
+| Galaxy S9 Chrome | Latest  | [View](./tests/GalaxyS9-Chrome.gif) | N/A                  |
+
+## Performance
 
 ## Issues
 
