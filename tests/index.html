@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Differential Serving Test Results</title>
+  <style>
+    .container {
+      display: block;
+      max-width: 960px;
+      width: 100%;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="tests">Tests</h1>
+    
+    <p>Click a test to view the result.</p>
+
+    <h3 id="browser">Browsers</h3>
+
+    <nav id="nav">
+      <ul>
+        <li>
+          <a href="#Chrome-73" class="test-links">Chrome-73</a>
+        </li>
+        <li>
+          <a href="#Chrome-61" class="test-links">Chrome-61</a>
+        </li>
+        <li>
+          <a href="#Chrome-60" class="test-links">Chrome-60</a>
+        </li>
+        <li>
+          <a href="#Safari-12" class="test-links">Safari-12</a>
+        </li>
+        <li>
+          <a href="#Safari-11" class="test-links">Safari-11</a>
+        </li>
+        <li>
+          <a href="#Safari-10-1" class="test-links">Safari-10-1</a>
+        </li>
+        <li>
+          <a href="#Firefox-66" class="test-links">Firefox-66</a>
+        </li>
+        <li>
+          <a href="#Firefox-60" class="test-links">Firefox-60</a>
+        </li>
+        <li>
+          <a href="#Firefox-59" class="test-links">Firefox-59</a>
+        </li>
+        <li>
+          <a href="#MSIE-11" class="test-links">MSIE-11</a>
+        </li>
+        <li>
+          <a href="#MSEdge-18" class="test-links">MSEdge-18</a>
+        </li>
+        <li>
+          <a href="#MSEdge-16" class="test-links">MSEdge-16</a>
+        </li>
+        <li>
+          <a href="#MSEdge-15" class="test-links">MSEdge-15</a>
+        </li>
+        <li>
+          <a href="#iPhoneXS-Safari" class="test-links">iPhoneXS-Safari</a>
+        </li>
+        <li>
+          <a href="#iPhoneX-Safari" class="test-links">iPhoneX-Safari</a>
+        </li>
+        <li>
+          <a href="#iPhone8-Safari" class="test-links">iPhone8-Safari</a>
+        </li>
+        <li>
+          <a href="#Pixel2-Chrome" class="test-links">Pixel2-Chrome</a>
+        </li>
+        <li>
+          <a href="#GalaxyS9-Chrome" class="test-links">GalaxyS9-Chrome</a>
+        </li>
+      </ul>
+    </nav>
+
+    <strong id="active"></strong>
+    <br />
+    <br />
+    <div id="gif-container" style="display: block; max-width: 960px; with: 95%;"></div>
+  </div>
+
+  <script>
+    (function () {
+      document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+          var nav = document.getElementById('nav');
+          var activeText = document.getElementById('active');
+          var gifContainer = document.getElementById('gif-container');
+          var locationHash = location.hash.replace('#', '');
+
+          function setTest(version) {
+            activeText.innerHTML = version;
+            var img = document.createElement('img');
+            img.src = 'https://johnstew.github.io/differential-serving/tests/' + version + '.gif';
+            img.style.width = '100%';
+            img.style.height = 'auto';
+            gifContainer.innerHTML = '';
+            gifContainer.appendChild(img);
+          }
+
+          if (locationHash) {
+            setTest(locationHash);
+          }
+
+          nav.addEventListener('click', function(e) {
+            var testLink = e.target.className === 'test-links' && e.target; 
+            var version = testLink.href.split('#')[1];
+            setTest(version);
+          });
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
