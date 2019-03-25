@@ -186,38 +186,39 @@ Goal: Serve ES6 bundle to ES6 supported environments and serve ES5 bundles to ES
 
 Browsers Tested:
 
-- 🎉 = `<script type="module">` support landed
 - ✅ = Works as expected (correct bundle is parsed and executed)
 - ⁉️ = Has issues
 
-| Browser          | Version | Browser Test Link                        | User Agent Test Link |
-|------------------|---------|------------------------------------------|----------------------|
-| Chrome           | 73      | [View](./tests/index.md#Chrome-73)       | N/A                  |
-| Chrome           | 61      | [View](./tests/index.md#Chrome-61)       | N/A                  |
-| Chrome           | 61      | [View](./tests/index.md#Chrome-60)       | N/A                  |
-| Safari           | 12      | [View](./tests/index.md#Safari-12)       | N/A                  |
-| Safari           | 11.1    | [View](./tests/index.md#Safari-11)       | N/A                  |
-| Safari           | 10.1    | [View](./tests/index.md#Safari-10-1)     | N/A                  |
-| Firefox          | 66      | [View](./tests/index.md#Firefox-66)      | N/A                  |
-| Firefox          | 60      | [View](./tests/index.md#Firefox-60)      | N/A                  |
-| Firefox          | 59      | [View](./tests/index.md#Firefox-59)      | N/A                  |
-| MSIE             | 11      | [View](./tests/index.md#MSIE-11)         | N/A                  |
-| MSEdge           | 18      | [View](./tests/index.md#MSEdge-18)       | N/A                  |
-| MSEdge           | 16      | [View](./tests/index.md#MSEdge-16)       | N/A                  |
-| MSEdge           | 15      | [View](./tests/index.md#MSEdge-15)       | N/A                  |
-| iPhone XS Safari | Latest  | [View](./tests/index.md#iPhoneXS-Safari) | N/A                  |
-| iPhone X Safari  | Latest  | [View](./tests/index.md#iPhoneX-Safari)  | N/A                  |
-| iPhone 8 Safari  | Latest  | [View](./tests/index.md#iPhone8-Safari)  | N/A                  |
-| Pixel 2 Chrome   | Latest  | [View](./tests/index.md#Pixel2-Chrome)   | N/A                  |
-| Galaxy S9 Chrome | Latest  | [View](./tests/index.md#GalaxyS9-Chrome) | N/A                  |
-
-## Performance
+| Browser          | Version | Browser Test Link                          | Browser Test Results | User Agent Test Link |
+|------------------|---------|--------------------------------------------|----------------------|----------------------|
+| Chrome           | 73      | [View](./tests/index.html#Chrome-73)       | ✅                   | N/A                  |
+| Chrome           | 61      | [View](./tests/index.html#Chrome-61)       | ✅                   | N/A                  |
+| Chrome           | 60      | [View](./tests/index.html#Chrome-60)       | ✅                   | N/A                  |
+| Safari           | 12      | [View](./tests/index.html#Safari-12)       | ✅                   | N/A                  |
+| Safari           | 11.1    | [View](./tests/index.html#Safari-11)       | ✅                   | N/A                  |
+| Safari           | 10.1    | [View](./tests/index.html#Safari-10-1)     | ⁉️(1)                | N/A                  |
+| Firefox          | 66      | [View](./tests/index.html#Firefox-66)      | ✅                   | N/A                  |
+| Firefox          | 60      | [View](./tests/index.html#Firefox-60)      | ✅                   | N/A                  |
+| Firefox          | 59      | [View](./tests/index.html#Firefox-59)      | ⁉️(2)                | N/A                  |
+| MSIE             | 11      | [View](./tests/index.html#MSIE-11)         | ⁉️(2)                | N/A                  |
+| MSEdge           | 18      | [View](./tests/index.html#MSEdge-18)       | ⁉️(3)                | N/A                  |
+| MSEdge           | 16      | [View](./tests/index.html#MSEdge-16)       | ⁉️(2)                | N/A                  |
+| MSEdge           | 15      | [View](./tests/index.html#MSEdge-15)       | ⁉️(2)                | N/A                  |
+| iPhone XS Safari | Latest  | [View](./tests/index.html#iPhoneXS-Safari) | ✅                   | N/A                  |
+| iPhone X Safari  | Latest  | [View](./tests/index.html#iPhoneX-Safari)  | ✅                   | N/A                  |
+| iPhone 8 Safari  | Latest  | [View](./tests/index.html#iPhone8-Safari)  | ✅                   | N/A                  |
+| Pixel 2 Chrome   | Latest  | [View](./tests/index.html#Pixel2-Chrome)   | ✅                   | N/A                  |
+| Galaxy S9 Chrome | Latest  | [View](./tests/index.html#GalaxyS9-Chrome) | ✅                   | N/A                  |
 
 ## Issues
 
-## Resources
+- #1 - Downloads both bundles and executes both bundles
+- #2 - Downloads both bundles
+- #3 - Downloads legacy bundle and downloads ESM bundle twice
 
-Links:
+## More Info
+
+Links: 
 
 -   https://philipwalton.com/articles/deploying-es2015-code-in-production-today/
 -   https://www.npmjs.com/package/html-webpack-multi-build-plugin
