@@ -4,7 +4,7 @@ At it's most basic level it looks something like you see below. The idea is that
 
 This is made possible thanks to `<script type="module">` and `<script nomodule>`. We can leverage these script properties to serve the correct JS when called by the browser.
 
-![diff-serving](./assets/diff-serving.gif)
+![diff-serving](./assets/diff-serving)
 
 Code running above can be found in [examples/test](./examples/test/).
 
@@ -190,26 +190,26 @@ Browsers Tested:
 - ✅ = Works as expected (correct bundle is parsed and executed)
 - ⁉️ = Has issues
 
-| Browser          | Version | Browser Test Link                   | User Agent Test Link |
-|------------------|---------|-------------------------------------|----------------------|
-| Chrome           | 73      | [View](./tests/Chrome-73.gif)       | N/A                  |
-| Chrome           | 61      | [View](./tests/Chrome-61.gif)       | N/A                  |
-| Chrome           | 61      | [View](./tests/Chrome-60.gif)       | N/A                  |
-| Safari           | 12      | [View](./tests/Safari-12.gif)       | N/A                  |
-| Safari           | 11.1    | [View](./tests/Safari-11.gif)       | N/A                  |
-| Safari           | 10.1    | [View](./tests/Safari-10-1.gif)     | N/A                  |
-| Firefox          | 66      | [View](./tests/Firefox-66.gif)      | N/A                  |
-| Firefox          | 60      | [View](./tests/Firefox-60.gif)      | N/A                  |
-| Firefox          | 59      | [View](./tests/Firefox-59.gif)      | N/A                  |
-| MSIE             | 11      | [View](./tests/MSIE-11.gif)         | N/A                  |
-| MSEdge           | 18      | [View](./tests/MSEdge-18.gif)       | N/A                  |
-| MSEdge           | 16      | [View](./tests/MSEdge-16.gif)       | N/A                  |
-| MSEdge           | 15      | [View](./tests/MSEdge-15.gif)       | N/A                  |
-| iPhone XS Safari | Latest  | [View](./tests/iPhoneXS-Safari.gif) | N/A                  |
-| iPhone X Safari  | Latest  | [View](./tests/iPhoneX-Safari.gif)  | N/A                  |
-| iPhone 8 Safari  | Latest  | [View](./tests/iPhone8-Safari.gif)  | N/A                  |
-| Pixel 2 Chrome   | Latest  | [View](./tests/Pixel2-Chrome.gif)   | N/A                  |
-| Galaxy S9 Chrome | Latest  | [View](./tests/GalaxyS9-Chrome.gif) | N/A                  |
+| Browser          | Version | Browser Test Link                        | User Agent Test Link |
+|------------------|---------|------------------------------------------|----------------------|
+| Chrome           | 73      | [View](./tests/index.md#Chrome-73)       | N/A                  |
+| Chrome           | 61      | [View](./tests/index.md#Chrome-61)       | N/A                  |
+| Chrome           | 61      | [View](./tests/index.md#Chrome-60)       | N/A                  |
+| Safari           | 12      | [View](./tests/index.md#Safari-12)       | N/A                  |
+| Safari           | 11.1    | [View](./tests/index.md#Safari-11)       | N/A                  |
+| Safari           | 10.1    | [View](./tests/index.md#Safari-10-1)     | N/A                  |
+| Firefox          | 66      | [View](./tests/index.md#Firefox-66)      | N/A                  |
+| Firefox          | 60      | [View](./tests/index.md#Firefox-60)      | N/A                  |
+| Firefox          | 59      | [View](./tests/index.md#Firefox-59)      | N/A                  |
+| MSIE             | 11      | [View](./tests/index.md#MSIE-11)         | N/A                  |
+| MSEdge           | 18      | [View](./tests/index.md#MSEdge-18)       | N/A                  |
+| MSEdge           | 16      | [View](./tests/index.md#MSEdge-16)       | N/A                  |
+| MSEdge           | 15      | [View](./tests/index.md#MSEdge-15)       | N/A                  |
+| iPhone XS Safari | Latest  | [View](./tests/index.md#iPhoneXS-Safari) | N/A                  |
+| iPhone X Safari  | Latest  | [View](./tests/index.md#iPhoneX-Safari)  | N/A                  |
+| iPhone 8 Safari  | Latest  | [View](./tests/index.md#iPhone8-Safari)  | N/A                  |
+| Pixel 2 Chrome   | Latest  | [View](./tests/index.md#Pixel2-Chrome)   | N/A                  |
+| Galaxy S9 Chrome | Latest  | [View](./tests/index.md#GalaxyS9-Chrome) | N/A                  |
 
 ## Performance
 
@@ -224,6 +224,8 @@ Links:
 -   https://www.npmjs.com/package/webpack-manifest-plugin
 -   https://calendar.perfplanet.com/2018/doing-differential-serving-in-2019/
 -   https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/
+-   https://caniuse.com/#search=type%3D%22module%22
+-   https://gist.github.com/samthor/64b114e4a4f539915a95b91ffd340acc
 
 Issues:
 
