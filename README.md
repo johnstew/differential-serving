@@ -180,7 +180,7 @@ Then within our template we can check to see if the browser works with ESM code,
 
 ## Tests
 
-With both methods in place, it's time to run some tests to see what each yields.
+Time to run some tests.
 
 Goal: Serve ES6 bundle to ES6 supported environments and serve ES5 bundles to ES5 environments. Only one bundle is to be parsed and executed.
 
@@ -189,36 +189,48 @@ Browsers Tested:
 - ✅ = Works as expected (correct bundle is parsed and executed)
 - ⁉️ = Has issues
 
-| Browser          | Version | Browser Test Link                          | Browser Test Results | User Agent Test Link |
-|------------------|---------|--------------------------------------------|----------------------|----------------------|
-| Chrome           | 73      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Chrome-73)       | ✅                   | N/A                  |
-| Chrome           | 61      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Chrome-61)       | ✅                   | N/A                  |
-| Chrome           | 60      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Chrome-60)       | ✅                   | N/A                  |
-| Safari           | 12      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Safari-12)       | ✅                   | N/A                  |
-| Safari           | 11.1    | [View](https://johnstew.github.io/differential-serving/tests/index.html#Safari-11)       | ✅                   | N/A                  |
-| Safari           | 10.1    | [View](https://johnstew.github.io/differential-serving/tests/index.html#Safari-10-1)     | ⁉️(1)                | N/A                  |
-| Firefox          | 66      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Firefox-66)      | ✅                   | N/A                  |
-| Firefox          | 60      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Firefox-60)      | ✅                   | N/A                  |
-| Firefox          | 59      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Firefox-59)      | ⁉️(2)                | N/A                  |
-| MSIE             | 11      | [View](https://johnstew.github.io/differential-serving/tests/index.html#MSIE-11)         | ⁉️(2)                | N/A                  |
-| MSEdge           | 18      | [View](https://johnstew.github.io/differential-serving/tests/index.html#MSEdge-18)       | ⁉️(3)                | N/A                  |
-| MSEdge           | 16      | [View](https://johnstew.github.io/differential-serving/tests/index.html#MSEdge-16)       | ⁉️(2)                | N/A                  |
-| MSEdge           | 15      | [View](https://johnstew.github.io/differential-serving/tests/index.html#MSEdge-15)       | ⁉️(2)                | N/A                  |
-| iPhone XS Safari | Latest  | [View](https://johnstew.github.io/differential-serving/tests/index.html#iPhoneXS-Safari) | ✅                   | N/A                  |
-| iPhone X Safari  | Latest  | [View](https://johnstew.github.io/differential-serving/tests/index.html#iPhoneX-Safari)  | ✅                   | N/A                  |
-| iPhone 8 Safari  | Latest  | [View](https://johnstew.github.io/differential-serving/tests/index.html#iPhone8-Safari)  | ✅                   | N/A                  |
-| Pixel 2 Chrome   | Latest  | [View](https://johnstew.github.io/differential-serving/tests/index.html#Pixel2-Chrome)   | ✅                   | N/A                  |
-| Galaxy S9 Chrome | Latest  | [View](https://johnstew.github.io/differential-serving/tests/index.html#GalaxyS9-Chrome) | ✅                   | N/A                  |
+| Browser          | Version | Browser Test Link                                                                        | Browser Test Results |
+|------------------|---------|------------------------------------------------------------------------------------------|----------------------|
+| Chrome           | 73      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Chrome-73)       | ✅                    |
+| Chrome           | 61      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Chrome-61)       | ✅                    |
+| Chrome           | 60      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Chrome-60)       | ✅                    |
+| Safari           | 12      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Safari-12)       | ✅                    |
+| Safari           | 11.1    | [View](https://johnstew.github.io/differential-serving/tests/index.html#Safari-11)       | ✅                    |
+| Safari           | 10.1    | [View](https://johnstew.github.io/differential-serving/tests/index.html#Safari-10-1)     | ⁉️(1)                |
+| Firefox          | 66      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Firefox-66)      | ✅                    |
+| Firefox          | 60      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Firefox-60)      | ✅                    |
+| Firefox          | 59      | [View](https://johnstew.github.io/differential-serving/tests/index.html#Firefox-59)      | ⁉️(2)                |
+| MSIE             | 11      | [View](https://johnstew.github.io/differential-serving/tests/index.html#MSIE-11)         | ⁉️(2)                |
+| MSEdge           | 18      | [View](https://johnstew.github.io/differential-serving/tests/index.html#MSEdge-18)       | ⁉️(3)                |
+| MSEdge           | 16      | [View](https://johnstew.github.io/differential-serving/tests/index.html#MSEdge-16)       | ⁉️(2)                |
+| MSEdge           | 15      | [View](https://johnstew.github.io/differential-serving/tests/index.html#MSEdge-15)       | ⁉️(2)                |
+| iPhone XS Safari | Latest  | [View](https://johnstew.github.io/differential-serving/tests/index.html#iPhoneXS-Safari) | ✅                    |
+| iPhone X Safari  | Latest  | [View](https://johnstew.github.io/differential-serving/tests/index.html#iPhoneX-Safari)  | ✅                    |
+| iPhone 8 Safari  | Latest  | [View](https://johnstew.github.io/differential-serving/tests/index.html#iPhone8-Safari)  | ✅                    |
+| Pixel 2 Chrome   | Latest  | [View](https://johnstew.github.io/differential-serving/tests/index.html#Pixel2-Chrome)   | ✅                    |
+| Galaxy S9 Chrome | Latest  | [View](https://johnstew.github.io/differential-serving/tests/index.html#GalaxyS9-Chrome) | ✅                    |
 
 ## Issues
+
+**browser**
+
+Above contains the test results for the browser based method of serving the bundles. This is the most important one to test because the browser tries to decide which bundle to use. From the results above it's clear there are still some issues with leaving this up to the browser.
+
+Issues Discovered:
 
 - #1 - Downloads both bundles and executes both bundles
 - #2 - Downloads both bundles
 - #3 - Downloads legacy bundle and downloads ESM bundle twice
 
-## More Info
+The worst case scenario here is not great. Unfortunately, it seems that the browser based method alone can create quite a poor user experience.
 
-Links: 
+**user-agent**
+
+The user agent method is a bit more contained because you are in control of which bundle is served and the worst case scenario would be serving the legacy bundle when you wanted to serve the ESM bundle. That doesn't sound too bad given that without this approach the user would have received that bundle anyways.
+
+It seems that the worst case scenario here still delivers a predictable and decent user experience over the browser based method.
+
+## Links
 
 -   https://philipwalton.com/articles/deploying-es2015-code-in-production-today/
 -   https://www.npmjs.com/package/html-webpack-multi-build-plugin
@@ -227,7 +239,4 @@ Links:
 -   https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/
 -   https://caniuse.com/#search=type%3D%22module%22
 -   https://gist.github.com/samthor/64b114e4a4f539915a95b91ffd340acc
-
-Issues:
-
 -   https://github.com/philipwalton/webpack-esnext-boilerplate/issues/1
