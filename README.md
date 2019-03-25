@@ -1,8 +1,8 @@
 ## What is differential serving?
 
-At it's most basic level it looks something like you see below. The idea is that we serve code to specific environments. In this case we are interested in serving ES6 code to modern browsers that support it and serve ES5 code to browsers like IE. 
+At it's most basic level it looks something like what you see below. The idea is that you serve code to specific environments. In this case the interest is in serving ES6 code to modern browsers that support it and serve ES5 code to browsers that don't. 
 
-This is made possible thanks to `<script type="module">` and `<script nomodule>`. We can leverage these script properties to serve the correct JS when called by the browser.
+This is made possible thanks to `<script type="module">` and `<script nomodule>`. You can leverage these script properties to serve the correct JS when called by the browser.
 
 ![diff-serving](./assets/diff-serving.gif)
 
@@ -10,13 +10,13 @@ Code running above can be found in [examples/test](./examples/test/).
 
 ## How to create two bundles?
 
-First, we need to create two bundles. One that targets ES5 environment (you probably already do this) and one that targets ES6 features. To do this we leverage the power of [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env.html) and webpack.
+First, you need to create two bundles. One that targets ES5 environment (you probably already do this) and one that targets ES6 features. To do this you can use [`@babel/preset-env`](https://babeljs.io/docs/en/babel-preset-env.html) and webpack.
 
 ### webpack
 
 Full Example: [webpack](./examples/webpack)
 
-This is a snippet from the example showing two webpack configs that are being exported. One contains settings we want for ES5 (legacy) code and the other contains settings for modern ES6 code.
+This is a snippet from the example showing two webpack configs that are being exported. One contains settings for ES5 (legacy) code and the other contains settings for modern ES6 code.
 
 [**webpack.config.js**](./examples/webpack/webpack.config.js)
 ```js
@@ -122,7 +122,7 @@ Here is a small example of what the browser implementation looks:
 
 That's really all that's needed to get this to work. From there the browser can decide which script to load and execute. `<script type="module">` contains are ES6 code and `<script nomodule>` works for ES5 code. 
 
-Unfortunately, this approach is not without its [issues](./#issues).
+Unfortunately, this approach is not without its [issues](#issues).
 
 ### User Agent
 
@@ -130,7 +130,7 @@ Full Example: [user-agent](./examples/user-agent)
 
 The more manual approach is to detect the user agent string and dynamically serve the correct bundle. There is a great article written by [Shubham Kanodia](https://twitter.com/_pastelsky) on [Smashing Magazine](https://www.smashingmagazine.com/2018/10/smart-bundling-legacy-code-browsers/) that introduces a package called [`browserslist-useragent`](https://www.npmjs.com/package/browserslist-useragent). 
 
-Using this we can create an express middleware to detect if we can use `<script type="module">` tag or not.
+Using this you can create an express middleware to detect if you can use `<script type="module">` tag or not.
 
 [**index.js**](./examples/user-agent/index.js)(server)
 ```js
@@ -182,7 +182,7 @@ Then within our template we can check to see if the browser works with ESM code,
 
 Time to run some tests.
 
-Goal: Serve ES6 bundle to ES6 supported environments and serve ES5 bundles to ES5 environments. Only one bundle is to be parsed and executed.
+Goal: Serve ES6(ESM) bundle to ES6 supported environments and serve ES5 bundles to ES5 environments. Only one bundle is to be parsed and executed.
 
 Browsers Tested:
 
@@ -229,6 +229,14 @@ The worst case scenario here is not great. Unfortunately, it seems that the brow
 The user agent method is a bit more contained because you are in control of which bundle is served and the worst case scenario would be serving the legacy bundle when you wanted to serve the ESM bundle. That doesn't sound too bad given that without this approach the user would have received that bundle anyways.
 
 It seems that the worst case scenario here still delivers a predictable and decent user experience over the browser based method.
+
+That said, it'd be interesting to check if there are any false positives that could come up where the user agent string returns true for module support but in reality it doesn't. In that situation, there is no user experience. 🤔
+
+## Summary
+
+It seems that the browser based method is not the most reliable to use at the moment. If all of the browsers failed in the same way then it would be a little better but downloading both bundles seems like a nonstarter.
+
+User Agent method seems to be the more predictable and reliable approach. Would require some good QA engineers to verify which bundle is being served in which environment but this seems to be a more manageable approach. 
 
 ## Links
 
