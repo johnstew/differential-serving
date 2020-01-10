@@ -12,7 +12,9 @@
   <div id="root-es5"></div>
   <div id="root-esm"></div>
 
-  <script nomodule src="/dist/index.legacy.js"></script>
-  <script type="module" src="/dist/index.esm.js"></script>
+  <!-- targeting ES2017 -->
+  <script type="module">window.ESM=!0;import'./dist/index.esm.js';</script>
+  <!-- targeting ES5 -->
+  <script nomodule defer src="ubl.js"></script>
 </body>
 </html>
